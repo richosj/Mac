@@ -1,0 +1,231 @@
+
+@import 'utils/var';
+@import 'utils/function';
+@import 'reset.css';
+
+@font-face {
+    font-family: 'NanumSquareNeoLight';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoExtraBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoHeavy';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoVariable';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf) format("truetype");
+}
+
+img{vertical-align: top;max-width: 100%;}
+
+.color_blue{color: #004e9d;}
+
+.container {
+    max-width: 124rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0 auto;
+}
+header{
+    background-color: #004b93;
+    height: 13.5rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    .container{
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.visual{
+    background-color: #66a7df;
+    &__img{
+        background: url("../img/visual.png") no-repeat 50% 50%;
+        background-size: cover;
+        height: 80rem;
+        max-width: 192rem;
+        margin: 0 auto;
+    }
+}
+nav{
+    background-color: #f3f0ee;
+    .container{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 3rem 0;
+        button{
+            color: #278fcf;
+            transition: all 0.5s;
+            will-change: auto;
+            font-size: #2990d0;
+            font-size: 2.9rem;
+            &.is-active{
+                color: #003b87;
+                font-weight: 700;
+                font-size: 3.4rem;
+            }
+            &:nth-child(2){
+                border-left: 1px solid #c0d8e6;
+                border-right: 1px solid #c0d8e6;
+            }
+        }
+    }
+}
+
+.content__title{
+    display: flex;
+    justify-content: center;
+    span{
+        display: inline-block;
+        position: relative;
+        color: #004e9d;
+        font-family: 'NanumSquareNeoExtraBold';
+        font-size: 6.5rem;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        margin-bottom: 7rem;
+        em{
+            font-style: normal;
+            color: #f6ac19;
+        }
+        &::after,
+        &::before{
+            content:"";
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &::after{
+            background-color: #004e9d;
+            height: .7rem;
+            width: 10rem;
+            top: 0;
+            border-radius: 2rem;
+        }
+        &::before{
+            bottom: 0;
+            width: 10rem;
+            height: .1rem;
+            background-color: #004e9d;
+        }
+    }
+}
+.content__desc{
+    color: #3e3a39;
+    font-size: 3.5rem;
+    b{
+        font-family: 'NanumSquareNeoExtraBold';
+        color: #004e9d;
+    }
+}
+
+.page1{
+    padding-top: 22rem;
+    &__title{
+        text-align: center;
+        padding-bottom: 8.5rem;
+    }
+    &__video{
+        padding-bottom: 56.25%;
+        position: relative;
+        margin-bottom: 12rem;
+        iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.page1_s1{
+    .item{
+        display: flex;
+        +.item{
+            margin-top: 6.5rem;
+        }
+        dl{
+            display: flex;
+            gap: 0 6.5rem;
+            dt{}
+            dd{
+                padding-top: 3rem;
+                .titles{
+                    color: #f6ac19;
+                    font-size: 4.5rem;
+                    border-bottom: 1px solid #bdbebe;
+                    padding-bottom: 2rem;
+                    font-family: 'NanumSquareNeoExtraBold';
+                }
+                .desc{
+                    padding-top: 1rem;
+                    p{
+                        line-height: 1.6;
+                        font-size: 2.8rem;
+                        sup{
+                            font-size: 1.6rem;
+                        }
+                    }
+                    .img{
+                        padding-top: 4rem;
+                        small{
+                            transform: translateX(-4rem);
+                            display: block;
+                            padding-top: 2rem;
+                            font-size: 1.4rem;
+                            font-weight: 300;
+                            color: #3e3a39;
+                            b{
+                                font-weight: 700;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page1_s2{
+    margin-top: 14rem;
+}
+
+
+footer{
+    background-color: #004e9d;
+    padding: 6.5rem 0;
+    @include responsive(768){
+        display: none;
+    }
+}
