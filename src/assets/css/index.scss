@@ -175,7 +175,7 @@ nav{
 .content__desc{
     color: #3e3a39;
     padding-bottom: 4rem;
-    
+    opacity: 1;
     p{
         font-size: 3.5rem;
         line-height: 1.5;
@@ -194,7 +194,7 @@ nav{
 
 .page1{
     padding-top: 22rem;
-    
+    opacity: 1;
     &__title{
         text-align: center;
         padding-bottom: 8.5rem;
@@ -266,7 +266,7 @@ nav{
     margin-top: 14rem;
 }
 .page1_s2_content{
-    
+    opacity: 1;
     +.content__title{margin-top: 14rem;}
     .hgroup{
         padding: .5rem 0;
@@ -299,6 +299,7 @@ nav{
         }
     }
     .col-5{
+        opacity: 1;
         grid-template-columns: repeat(5,1fr);
         .col{
             position: relative;
@@ -760,3 +761,5 @@ justify-content: space-between;
         sup {font-size:1rem;}
     }
 }
+
+/***주석***/
