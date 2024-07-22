@@ -264,6 +264,7 @@ nav{
     margin-top: 14rem;
 }
 .page1_s2_content{
+    opacity: 1;
     +.content__title{margin-top: 14rem;}
     .hgroup{
         padding: .5rem 0;
@@ -296,6 +297,7 @@ nav{
         }
     }
     .col-5{
+        opacity: 1;
         grid-template-columns: repeat(5,1fr);
         .col{
             position: relative;
