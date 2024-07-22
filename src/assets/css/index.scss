@@ -3,6 +3,8 @@
 @import 'utils/function';
 @import 'reset.css';
 
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
 @font-face {
     font-family: 'NanumSquareNeoLight';
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
@@ -56,10 +58,23 @@ header{
     padding-right: 8rem;
     .container{
         max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+    @include responsive(1024){
+        padding-left: 4.166vw;
+        padding-right: 4.166vw;
+    }
+    @include responsive(768){
+        padding: 1.5rem;
+        height: auto;;
+        .container{
+            gap: 0 10%
+        }
     }
 }
 
@@ -81,16 +96,32 @@ nav{
         align-items: center;
         grid-template-columns: repeat(3, 1fr);
         padding: 3rem 0;
+        @media (max-width : 1024px) {
+            padding: 2rem 0;
+        }
         button{
             color: #278fcf;
             transition: all 0.5s;
             will-change: auto;
             font-size: #2990d0;
             font-size: 2.9rem;
+            @media (max-width : 1024px) {
+                font-size: 1.5rem;
+            }
+            @media (max-width : 768px) {
+                font-size: 1.3rem;
+            }
             &.is-active{
                 color: #003b87;
                 font-weight: 700;
                 font-size: 3.4rem;
+                @media (max-width : 1024px) {
+                    font-size: 2rem;
+                }
+                @media (max-width : 768px) {
+                    font-size: 1.5rem;
+                }
+                
             }
             &:nth-child(2){
                 border-left: 1px solid #c0d8e6;
@@ -141,10 +172,20 @@ nav{
 }
 .content__desc{
     color: #3e3a39;
-    font-size: 3.5rem;
+    padding-bottom: 4rem;
+    p{
+        font-size: 3.5rem;
+        line-height: 1.5;
+        sup{
+            font-size: 2rem;
+        }
+    }
     b{
         font-family: 'NanumSquareNeoExtraBold';
         color: #004e9d;
+        .noto{
+            font-family: 'Noto Sans KR';
+        }
     }
 }
 
@@ -220,12 +261,416 @@ nav{
 .page1_s2{
     margin-top: 14rem;
 }
+.page1_s2_content{
+    +.content__title{margin-top: 14rem;}
+    .hgroup{
+        padding: .5rem 0;
+        border-top: 1px solid #f6ac19;
+        color: #f6ac19;
+        font-family: 'NanumSquareNeoExtraBold';
+        font-size: 3rem;
+        span{
+            background-color: #fff8ec;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: .5rem 0;
+            sup{
+                font-size: 1.7rem;
+            }
+        }
+    }
+    .boxing{
+        border: 1px solid #f6ac19;
+        display: grid;
+        align-items: center;
+        padding: 4rem 0;
+        &.one{
+            padding: 7rem 5rem;
+            justify-content: center;
+        }
+        +.hgroup{
+            margin-top: 3rem;
+        }
+    }
+    .col-5{
+        grid-template-columns: repeat(5,1fr);
+        .col{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 20rem;
+            .icon{
+                height: 14.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p{
+                font-family: 'NanumSquareNeoBold';
+                color: #004e9d;
+                font-size: 3.6rem;
+            }
+            +.col{
+                border-left: 1px solid #f6ac19;
+            }
+        }
+    }
+}
+.small{
+    margin-top: 1.5rem;
+    color: #3e3a39;
+    font-size: 1.4rem;
+}
+.page1_s3{
+    margin-top: 14rem;
+}
+.page1_s3_title{
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-bottom: 14rem;
+}
 
+.page1_s3_content{
+    +.page1_s3_content{
+        margin-top: 4rem;
+    }
+    .hgroup{
+        padding: .5rem 0;
+        border-top: 1px solid #2990d0;
+        color: #004e9d;
+        font-family: 'NanumSquareNeoExtraBold';
+        font-size: 3rem;
+        span{
+            background-color: #eff5fb;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: .5rem 0;
+            sup{
+                font-size: 1.7rem;
+            }
+        }
+    }
+    .boxing{
+        border: 1px solid #2990d0;
+        padding: 5rem 8.5rem;
+        .p{
+            font-weight: 300;
+            font-size: 3rem;
+            line-height: 1.5;
+            text-indent: -1.5rem;
+            padding-left: 1.5rem;
+            +.p{
+                margin-top: 3.5rem;
+            }
+            &::before{
+                content:"-";
+                
+            }
+            b{
+                font-family: 'NanumSquareNeoExtraBold';
+                color: #3e3a39;
+                background-color: #fff4b2;
+            }
+        }
+    }
+}
 
-footer{
+.reper_list{
+    strong{
+        display: inline-flex;
+        background-color: #004e9d;
+        padding: .5rem 1.5rem;
+        border-radius: 1.5rem;
+        font-size: 1.6rem;
+        font-family: 'NanumSquareNeoBold';
+        color: #fff;
+    }
+    ol{
+        margin-top: 1rem;
+        counter-reset: my-awesome-counter;
+        li{
+            counter-increment: my-awesome-counter;
+            font-size: 1.2rem;
+            +li{margin-top: .5rem;}
+            &::before{
+                font-family: 'Noto Sans KR';
+                font-weight: 700;
+                content: counter(my-awesome-counter) ". ";
+                color: #004e9d;
+            }
+        }
+    }
+}
+
+.basic{
+    margin-top: 14rem;
+    .collapse{
+        +.collapse{
+            margin-top: 5rem;
+        }
+        button{
+            font-family: 'NanumSquareNeoExtraBold';
+            background-color: #f4f4f4;
+            border-radius: 5.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            padding: 3rem 0;
+            gap: 0 1.5rem;
+            font-size: 3.4rem;
+            i{
+                display: inline-block;
+                width: 2.7rem;
+                height: 1.5rem;
+                background: url("../img/up.png") no-repeat;
+                transform: rotate(180deg);
+                position: relative;
+                transition: all 0.25s;
+            }
+            &.active{
+                i{
+                    transform: rotate(0deg);
+                }
+            }
+        }
+        .con{
+
+        }
+        .boxing{
+            border: 1px solid #2990d0;
+            padding: .4rem;
+            margin-bottom: 2.5rem;
+            .item{
+                &:last-child{
+                    dl{
+                        dt{
+                            border-bottom: 0;
+                        }
+                        dd{
+                            span{
+                                border-bottom: 0;
+                            }
+                        }
+                    }
+                }
+                dl{
+                    display: flex;
+                    padding-right: 0;
+                    background-color: #eff5fb;
+                    dt{
+                        padding: 0 2.8rem;
+                        width: calc(27rem - 5rem);
+                        border-bottom: 1px dashed #9ecce9;
+                        display: flex;
+                        margin-left: 2.5rem;
+                        margin-right: 2.5rem;
+                        align-items: center;
+                        justify-content: center;
+                        span{
+                            color: #004e9d;
+                            font-family: 'NanumSquareNeoExtraBold';
+                            font-size: 3rem;
+                        }
+                    }
+                    dd{
+                        width: calc(100% - 27rem);
+                        padding: 0 4.5rem;
+                        background-color: #fff;
+                        line-height: 1.5;
+                        span{
+                            display: block;
+                            padding: 2.5rem 0;
+                            border-bottom: 1px dashed #9ecce9;
+                            font-family: 'NanumSquareNeoBold';
+                            font-size: 1.7rem;
+                        }
+                    }
+                }
+            }
+        }
+        .txt{
+            strong{
+                font-family: 'NanumSquareNeoExtraBold';
+                font-size: 1.6rem;
+                display: block;
+                margin-bottom: 1rem;
+            }
+            p{
+                line-height: 1.5;
+                font-size: 1.6rem;
+                font-weight: 300;
+                font-family: 'Noto Sans KR';
+                color: #4d4d4d;
+                b{
+                    font-family: 'NanumSquareNeoBold';
+                }
+            }
+        }
+    }
+}
+
+#footer{
     background-color: #004e9d;
     padding: 6.5rem 0;
-    @include responsive(768){
-        display: none;
+    margin-top: 9.5rem;
+    @media (max-width : 1024px) {
+        padding: 5rem 0;
     }
+}
+
+.footer1{
+    p{
+        color: #fff;
+        font-weight: 300;
+        font-family: 'Noto Sans KR';
+        font-size: 1.6rem;
+        +p{
+            margin-top: 1.5rem;
+        }
+        a{
+            color: #fff;
+            text-decoration: underline;
+            font-family: 'NanumSquareNeoExtraBold';
+        }
+    }
+    @media (max-width : 1024px) {
+        p{
+            font-size: 1.3rem;
+            +p{
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+.footer2{
+    display: flex;
+    gap: 0 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    div{
+        color: #fff;
+        font-size: 1.6rem;
+    }
+    div:nth-child(1){
+        font-family: 'NanumSquareNeoExtraBold';
+    }
+    @media (max-width : 1024px) {
+        div{
+            font-size: 1.3rem;
+        }
+    }
+}
+.footer3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width : 1024px) {
+        display: block;
+    }
+    .left{
+        display: flex;
+        gap: 0 3.5rem;
+        @media (max-width : 1024px) {
+            gap: 0 2.5rem;
+        }
+    }
+    .right{
+        display: flex;
+        gap: 0 3.5rem;
+        margin-top: 2rem;
+        @media (max-width : 1024px) {
+            gap: 0 2.5rem;
+        }
+        a{
+            color: #fff;
+            font-family: 'NanumSquareNeoBold';
+            font-size: 1.7rem;
+            @media (max-width : 1024px) {
+                font-size: 1.2rem;
+            }
+            
+        }
+    }
+    
+}
+.footer4{
+padding-top: 2.5rem;
+margin-top: 2rem;
+border-top: 1px solid #407ab6;
+display: flex;
+justify-content: space-between;
+@media (max-width : 1024px) {
+    display: block;
+}
+.left{
+    > div{
+        display: flex;
+        gap: 0 1.5rem;
+        @media (max-width : 1024px) {
+            flex-direction: column;
+            align-items: center;
+
+        }
+        &:not(:first-child){
+            margin-top: 1.5rem;
+        }
+        div:nth-child(1){
+            width: 26rem;
+            @media (max-width : 1024px) {
+                width: auto;
+            }
+        }
+        div:nth-child(2){
+            width: calc(100% - 26rem);
+            @media (max-width : 1024px) {
+                width: auto;
+            }
+            p{
+                color: #fff;
+                font-size: 1.4rem;
+                @media (max-width : 1024px) {
+                    text-align: center;
+                    font-size: 1.2rem;
+                }
+                &:nth-child(1){
+                    font-family: 'NanumSquareNeoBold';
+                    @media (max-width : 1024px) {
+                        margin-top: 1rem;
+                        margin-bottom: .5rem;
+                    }
+                }
+                &:nth-child(2){
+                    font-family: 'Noto Sans KR';
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+.right{
+    @media (max-width : 1024px) {
+        margin-top: 2rem;
+    }
+    div{
+        line-height: 1.5;
+        color: #fff;
+        font-family: 'NanumSquareNeoBold';
+        font-size: 1.7rem;
+        @media (max-width : 1024px) {
+            font-size: 1.2rem;
+        }
+        +div{
+            margin-top: 2.8rem;
+            @media (max-width : 1024px) {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
 }

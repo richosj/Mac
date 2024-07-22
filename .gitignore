@@ -4,3 +4,4 @@ package-lock.json
 .history/
 .vscode
 01.ai
+dist
