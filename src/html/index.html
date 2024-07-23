@@ -50,7 +50,7 @@
         </nav>
 
         <div class="wraps">
-            <section class="section page1" style="display: none;">
+            <section class="section page1">
                 <div class="container">
                     <div class="page1__title"><img src="./assets/img/page1_title.png" alt=""></div>
 
@@ -400,7 +400,7 @@
                 </div>
     
             </section>
-            <section class="section page3">
+            <section class="section page3" style="display: none;">
                 <div class="container">
                     <div class="row1">
                         <div class="content__title">
@@ -890,19 +890,19 @@
                 });
             });
             // 초기 상태 설정
-            tabs[2].classList.add('is-active');
-            sections[2].classList.add('active');
-            gsap.set(sections[2], {opacity: 1, display: 'block'});
+            tabs[0].classList.add('is-active');
+            sections[0].classList.add('active');
+            gsap.set(sections[0], {opacity: 1, display: 'block'});
 
-            const toggleBtn = document.querySelector('.collapse button');
+            const toggleBtn = document.querySelectorAll('.collapse button');
             if(toggleBtn.length > 0){
-                toggleButtons.forEach(button => {
+                toggleBtn.forEach(button => {
                     button.addEventListener('click', function() {
                         this.classList.toggle('active');
 
                         const cont = this.nextElementSibling;
 
-                        if (cont && cont.classList.contains('cont')) {
+                        if (cont && cont.classList.contains('con')) {
                             if (cont.style.maxHeight) {
                                 cont.style.maxHeight = null;
                             } else {
