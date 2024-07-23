@@ -50,7 +50,7 @@
         </nav>
 
         <div class="wraps">
-            <section class="section page1">
+            <section class="section page1" style="display: none;">
                 <div class="container">
                     <div class="page1__title"><img src="./assets/img/page1_title.png" alt=""></div>
 
@@ -241,7 +241,7 @@
 
                 </div>
             </section>
-            <section class="section page2">
+            <section class="section page2"  style="display: none;">
                 <div class="row1">
                     <div class="container">
                     
@@ -257,8 +257,9 @@
                             <em>국가별</em>로 <em>다양</em>하게 나타납니다.<sup>11-16</sup>
                           </span>
                         </div>
-                          <div class="col">
+                          <div class="col g_tab_images">
                             <img src="./assets/img/page2_img1_worldmap1.png" alt="">
+                            <img src="./assets/img/page2_img1_worldmap2.png" alt="">
                           </div>
                       </div>
                     </div>
@@ -389,15 +390,73 @@
                       </span>
                     </div>
     
-                    <div class="col-map">
+                    <div class="col-map g_tab_images">
                       <img src="./assets/img/page2_img3_worldmap1.png" alt="">
+                      <img src="./assets/img/page2_img3_worldmap2.png" alt="">
+                      <img src="./assets/img/page2_img3_worldmap3.png" alt="">
                     </div>
     
                   </div>
     
             </section>
             <section class="section page3">
-    
+                <div class="container">
+                    <div class="row1">
+                        <div class="content__title">
+                        <span>
+                            접종 횟수 & 스케줄 <em>예시</em>
+                        </span>
+                        </div>
+                        <div class="options-cont-wrap">
+                            <div class="options-title-col">
+                                <img src="./assets/img/ico-option-num-1.png" alt="">
+                                <div class="txt-row">벡세로 + 멘비오 <b>생후 2개월</b></div>
+                                <div class="txt-row ty1">최초 접종</div>
+                            </div>
+
+
+                            <div class="options-info-col">
+
+                                <div class="head-col">
+                                    <div class="inner">
+                                        <b>접종횟수</b>
+                                        <b>2개월</b>
+                                        <b>4개월</b>
+                                        <b>6개월</b>
+                                        <b>12-15개월</b>
+                                    </div>
+                                </div>
+                                <div class="cont-col">
+                                    <div class="cont-row ty-blue">
+                                        <div class="b-inner">
+                                            <b>벡세로</b>
+                                        </div>
+                                        <div class="inner">
+                                            <span>3회</span>
+                                            <span>Bex 1차</span>
+                                            <span>Bex 2차</span>
+                                            <span>-</span>
+                                            <span>Bex 3차<sup>*</sup></span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="cont-row ty-yellow">
+                                        <div class="b-inner">
+                                            <b>멘비오</b>
+                                        </div>
+                                        <div class="inner">
+                                            <span>4회</span>
+                                            <span>Men 1차</span>
+                                            <span>Men 2차</span>
+                                            <span>Men 3차</span>
+                                            <span>Men 4차<sup>#</sup></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <div class="reper_list">
@@ -685,28 +744,50 @@
                 });
             });
             // 초기 상태 설정
-            tabs[0].classList.add('is-active');
-            sections[0].classList.add('active');
-            gsap.set(sections[0], {opacity: 1, display: 'block'});
+            tabs[2].classList.add('is-active');
+            sections[2].classList.add('active');
+            gsap.set(sections[2], {opacity: 1, display: 'block'});
 
             const toggleBtn = document.querySelector('.collapse button');
+            if(toggleBtn.length > 0){
+                toggleButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        this.classList.toggle('active');
 
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    this.classList.toggle('active');
+                        const cont = this.nextElementSibling;
 
-                    const cont = this.nextElementSibling;
-
-                    if (cont && cont.classList.contains('cont')) {
-                        if (cont.style.maxHeight) {
-                            cont.style.maxHeight = null;
-                        } else {
-                            cont.style.maxHeight = cont.scrollHeight + 'px';
+                        if (cont && cont.classList.contains('cont')) {
+                            if (cont.style.maxHeight) {
+                                cont.style.maxHeight = null;
+                            } else {
+                                cont.style.maxHeight = cont.scrollHeight + 'px';
+                            }
+                            cont.classList.toggle('show');
                         }
-                        cont.classList.toggle('show');
+                    });
+                });
+            } 
+                
+
+            // 이미지 클릭시 롤링
+            document.querySelectorAll('.g_tab_images').forEach(function(container) {   
+                const gImages = container.querySelectorAll('img');
+                gImages.forEach(function(img, index) {
+                    if (index !== 0) {
+                        img.style.display = 'none';
                     }
                 });
+                gImages.forEach(function(img, index) {
+                    img.addEventListener('click', function() {    
+                        gImages.forEach(function(image) {
+                            image.style.display = 'none';
+                        });
+                        var nextIndex = (index + 1) % gImages.length;
+                        gImages[nextIndex].style.display = 'inline-block';
+                    });
+                });
             });
+
         });
     </script>
 
