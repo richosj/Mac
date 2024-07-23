@@ -145,6 +145,16 @@ nav{
         padding-top: 4rem;
         padding-bottom: 3rem;
         margin-bottom: 7rem;
+        @media (max-width:1024px) {
+            font-size: 4rem;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+            margin-bottom: 5rem;
+        }
+        @media (max-width:768px) {
+            font-size: 3rem;
+            margin-bottom: 4rem;
+        }
         em{
             font-style: normal;
             color: #f6ac19;
@@ -163,12 +173,19 @@ nav{
             width: 10rem;
             top: 0;
             border-radius: 2rem;
+            @media (max-width:1024px) {
+                height: .4rem;
+                width: 7rem;
+            }
         }
         &::before{
             bottom: 0;
             width: 10rem;
             height: .1rem;
             background-color: #004e9d;
+            @media (max-width:1024px) {
+                width: 7rem;
+            }
         }
     }
 }
@@ -183,6 +200,21 @@ nav{
             font-size: 2rem;
         }
     }
+    @media (max-width: 1024px) {
+        padding-bottom: 2rem;
+        p{
+            font-size: 2.4rem;
+            sup{
+                font-size: .875em;
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        padding-bottom: 1.5rem;
+        p{
+            font-size: 1.8rem;
+        }
+    }
     b{
         font-family: 'NanumSquareNeoExtraBold';
         color: #004e9d;
@@ -195,14 +227,28 @@ nav{
 .page1{
     padding-top: 22rem;
     opacity: 1;
+    @media (max-width: 1024px) {
+        padding-top: 14rem;
+    }
+    @media (max-width: 768px) {
+        padding-top: 10rem;
+    }
     &__title{
         text-align: center;
         padding-bottom: 8.5rem;
+        @media (max-width: 1024px) {
+            padding-bottom: 4rem;
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
     }
     &__video{
         padding-bottom: 56.25%;
         position: relative;
         margin-bottom: 12rem;
+        @media (max-width: 1024px) {
+            margin-bottom: 7rem;
+        }
         iframe{
             position: absolute;
             top: 0;
@@ -218,27 +264,62 @@ nav{
         display: flex;
         +.item{
             margin-top: 6.5rem;
+            @media (max-width:1024px) {
+                margin-top: 4rem;
+            }
         }
         dl{
             display: flex;
             gap: 0 6.5rem;
-            dt{}
+            @media (max-width:1024px) {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                border: 1px solid #eee;
+                padding: 2rem;
+                border-radius: 1rem;
+            }
+            dt{
+                @media (max-width:1024px) {
+                    text-align: center;
+                    img{
+                        height: 10rem;
+                        aspect-ratio: 1;
+                    }
+                }
+            }
             dd{
                 padding-top: 3rem;
+                @media (max-width:1024px) {
+                    padding-top: 2rem;
+                }
                 .titles{
                     color: #f6ac19;
                     font-size: 4.5rem;
                     border-bottom: 1px solid #bdbebe;
                     padding-bottom: 2rem;
                     font-family: 'NanumSquareNeoExtraBold';
+                    @media (max-width:1024px) {
+                        font-size: 2.5rem;
+                        padding-bottom: 1.25rem;
+                    }
+                    @media (max-width:1024px) {
+                        font-size: 2rem;
+                    }
                 }
                 .desc{
                     padding-top: 1rem;
                     p{
                         line-height: 1.6;
                         font-size: 2.8rem;
+                        @media (max-width:1024px) {
+                            font-size: 1.4rem;
+                        }
                         sup{
                             font-size: 1.6rem;
+                            @media (max-width:1024px) {
+                                font-size: 1.2rem;
+                            }
                         }
                     }
                     .img{
@@ -250,6 +331,9 @@ nav{
                             font-size: 1.4rem;
                             font-weight: 300;
                             color: #3e3a39;
+                            @media (max-width: 1024px) {
+                                transform: translateX(0rem);
+                            }
                             b{
                                 font-weight: 700;
                             }
@@ -264,6 +348,12 @@ nav{
 
 .page1_s2{
     margin-top: 14rem;
+    @media (max-width:1024px) {
+        margin-top: 10rem;
+    }
+    @media (max-width:1024px) {
+        margin-top: 8rem;
+    }
 }
 .page1_s2_content{
     opacity: 1;
@@ -385,6 +475,10 @@ nav{
     }
 }
 
+
+/* 
+    설명글ㅊ
+*/
 .reper_list{
     strong{
         display: inline-flex;
@@ -410,13 +504,33 @@ nav{
             }
         }
     }
+    @media (max-width:1024px) {
+        strong{
+            font-size: 1.4rem;
+        }
+        ol{
+            li{
+                display: flex;
+                &::before{
+                    line-height: 1;
+                }
+            }
+        }
+    }
 }
 
+
+/**
+    기본정보
+**/
 .basic{
     margin-top: 14rem;
     .collapse{
         +.collapse{
             margin-top: 5rem;
+            @media (max-width:1024px) {
+                margin-top: 3rem;
+            }
         }
         button{
             font-family: 'NanumSquareNeoExtraBold';
@@ -452,6 +566,9 @@ nav{
             border: 1px solid #2990d0;
             padding: .4rem;
             margin-bottom: 2.5rem;
+            @media (max-width:1024px) {
+                padding: .3rem;
+            }
             .item{
                 &:last-child{
                     dl{
@@ -592,6 +709,14 @@ nav{
         margin-top: 2rem;
         @media (max-width : 1024px) {
             gap: 0 2.5rem;
+        }
+        @media (max-width : 768px) {
+            display: grid;
+            gap: 1.5rem 2.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            a{
+                text-align: center;
+            }
         }
         a{
             color: #fff;
@@ -761,5 +886,3 @@ justify-content: space-between;
         sup {font-size:1rem;}
     }
 }
-
-/***주석***/

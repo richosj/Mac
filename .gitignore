@@ -5,3 +5,4 @@ package-lock.json
 .vscode
 01.ai
 dist
+doc
