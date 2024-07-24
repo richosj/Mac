@@ -457,10 +457,16 @@
                                 </span>
                             </div>
 
-                            <div class="col-map g_tab_images">
-                                <img src="./assets/img/page2_img3_worldmap1.png" alt="">
-                                <img src="./assets/img/page2_img3_worldmap2.png" alt="">
-                                <img src="./assets/img/page2_img3_worldmap3.png" alt="">
+                            <div class="col-map g-map-wrap">
+                                <div class="g-map-inner">
+                                    <img src="./assets/img/page2_img3_worldmap1.png" data-num="0" alt="">
+                                    <img src="./assets/img/page2_img3_worldmap2.png" data-num="1" alt="">
+                                    <img src="./assets/img/page2_img3_worldmap3.png" data-num="2" alt="">
+                                </div>
+                                <div class="g-map-btns">
+                                    <a href="#" data-num="1">벡세로 효과</a>
+                                    <a href="#" data-num="2">멘비오 효과</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1113,7 +1119,48 @@
 
                 tabImages.forEach(img => img.addEventListener('click', toggleContent));
 
+                // 지도 클릭 탭
+                const gMapBtns = document.querySelectorAll('.g-map-btns a');
+                const gMapImages = document.querySelectorAll('.g-map-inner img');
+                const gMapDefaultImage = gMapImages[0];
 
+                function showImage(dataNum) {
+                    gMapImages.forEach(img => {
+                        if (img.getAttribute('data-num') === dataNum) {
+                            img.style.display = 'inline-block';
+                        } else {
+                            img.style.display = 'none';
+                        }
+                    });
+                }
+
+                function resetgMapImages() {
+                    gMapImages.forEach(img => {
+                        img.style.display = 'none';
+                    });
+                    gMapDefaultImage.style.display = 'inline-block';
+                }
+
+                gMapBtns.forEach(button => {
+                    button.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        const activeButton = document.querySelector('.g-map-btns a.active');
+                        
+                        if (activeButton && activeButton === button) {
+                            activeButton.classList.remove('active');
+                            resetgMapImages();
+                        } else {
+                            if (activeButton) {
+                                activeButton.classList.remove('active');
+                            }
+                            button.classList.add('active');
+                            showImage(button.getAttribute('data-num'));
+                        }
+                    });
+                });
+
+                // Initialize: hide all gMapImages except the default one
+                resetgMapImages();
             });
         </script>
 
