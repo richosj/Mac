@@ -555,6 +555,7 @@ nav{
             img{
                 width: 2rem;
                 margin-right: .5rem;
+                vertical-align: middle;
             }
             sup{
                 font-size: 1.7rem;
@@ -606,6 +607,109 @@ nav{
                 font-family: 'NanumSquareNeoExtraBold';
                 color: #3e3a39;
                 background-color: #fff4b2;
+            }
+        }
+    }
+}
+
+.boxing:has(.consider){
+    padding: .8rem 0;
+}
+
+.consider{
+    display: flex;
+    @media (max-width:1024px) {
+        flex-wrap: wrap;
+        gap: 1rem 0
+    }
+    .figure{
+        width: 75%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        @media (max-width:1024px) {
+            width: 100%;
+            display: block;
+        }
+        .cols{
+            text-align: center;
+            position: relative;
+            padding:0 .8rem;
+            border-right: 1px solid #aed5ed;
+            @media (max-width:1024px) {
+                border-right: 0;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 1.8rem;
+            }
+        }
+        
+        .p0{font-size: 2.8rem;font-family: var(--noto);font-weight: 300;color: #3e3a39;
+            padding: 4rem 0 0.6rem; 
+            b{
+                font-family: var(--neo2);
+            }
+            @media (max-width:1024px) {
+                font-size: 2rem;
+                padding: 2rem 0;
+            }
+        }
+        .p1{
+            font-family: var(--noto);
+            font-weight: 300;
+            font-size: 1.6rem;
+            line-height: 1.34;
+            @media (max-width:1024px) {
+                font-size: 1.4rem;
+            }
+        }
+        .p2{
+            font-family: var(--noto);
+            font-weight: 300;
+            font-size: 1rem;
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            @media (max-width:1024px) {
+                position: static;
+                padding-top: 1rem;
+            }
+        }
+        .img{
+            @media (max-width: 1024px) {
+                padding: 1rem;
+                img{
+                    border: 1px solid #eee;
+                }
+
+            }
+        }
+    }
+    .txt-grid{
+        width: 25%;
+        height: 100%;
+        padding: 0 .8rem;
+        @media (max-width:1024px) {
+            width: 100%;
+        }
+        > div{
+            padding: 2.5rem 0;
+            height: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 300;
+            font-family: var(--noto);
+            line-height: 1.34;
+            font-size: 3rem;
+            text-align: center;
+            &:not(:first-child){
+                border-top: 1px solid #c3e0f2;
+            }
+            @media (max-width:1024px) {
+                height: auto;
+                font-size: 1.4rem;
+                padding: 1rem 0;
             }
         }
     }
@@ -716,6 +820,31 @@ nav{
             overflow:hidden;visibility: hidden; max-height:0;
             &.show {visibility: visible;transition: all 0.3s;}
         }
+
+        .boxing.v2{
+            border-color: #FBD68C;
+            .item{
+                @media (max-width:1024px) {
+                    border-color: #F6AC19;
+                }
+                dl{
+                    background-color: #FFF8EC;
+                    dt{
+                        //background-color: #FFF8EC;
+                        border-color: #f6ac19;
+                        span{
+                            color: #f6ac19;
+                            //border-color: #f6ac19;
+                        }
+                    }
+                    dd{
+                        span{
+                            border-color: #fad282;
+                        }
+                    }
+                }
+            }
+        }
         .boxing{
             border: 1px solid #2990d0;
             padding: .4rem;
@@ -724,7 +853,6 @@ nav{
                 padding: 0;
             }
             .item{
-                
                 @media (max-width:1024px) {
                     border-bottom: 1px solid #2990d0;        
                 }
